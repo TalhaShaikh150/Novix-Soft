@@ -179,13 +179,69 @@ body {
 .section3-showcase {
   display: flex;
   gap: 20px;
-  overflow-x: scroll;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.work {
+  flex: 0 0 calc(100% / 3);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, border-radius 0.3s ease;
 }
 
 .work img {
   width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: inherit;
 }
 
-.work {
-  width: 33.33%;
+/* optional: hide scrollbar */
+.section3-showcase::-webkit-scrollbar {
+  display: none;
+}
+
+.work-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timeline {
+  display: flex;
+}
+
+.work-higlight {
+  font-size: 0.7em;
+  color: #575277;
+  font-weight: bold;
+}
+.work-title {
+  font-weight: 300;
+  font-size: 1.8em;
+}
+
+.work-numbers {
+  color: var(--primary-color);
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+.numbers-description {
+  font-weight: 300;
+  font-size: 0.8em;
+  color: #575277;
+  width: 60%;
+}
+
+.work:hover img {
+  border-radius: 30px;
+  transform: scale(1.01);
+}
+
+.work:hover .work-title {
+  color: var(--primary-color);
 }
