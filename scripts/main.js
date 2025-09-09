@@ -1,8 +1,7 @@
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
- multiplier: 1.5,
- lerp: 0.1
+ multiplier:0.5,
 });
 
 const navbar = document.querySelector('.navbar');
