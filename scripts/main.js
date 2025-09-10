@@ -18,11 +18,7 @@ function navbarScroll() {
 
 navbarScroll();
 
-// const scroll = new LocomotiveScroll({
-//   el: document.querySelector("[data-scroll-container]"),
-//   smooth: true,
-//   multiplier: 3,
-// });
+
 
 const showcase = document.querySelector(".section3-showcase");
 const leftBtn = document.querySelector(".left-arrow");
