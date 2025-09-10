@@ -1,8 +1,7 @@
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
- multiplier: 1.5,
- lerp: 0.1
+ multiplier:0.5,
 });
 
 const navbar = document.querySelector('.navbar');
@@ -19,11 +18,7 @@ function navbarScroll() {
 
 navbarScroll();
 
-// const scroll = new LocomotiveScroll({
-//   el: document.querySelector("[data-scroll-container]"),
-//   smooth: true,
-//   multiplier: 3,
-// });
+
 
 const showcase = document.querySelector(".section3-showcase");
 const leftBtn = document.querySelector(".left-arrow");
