@@ -124,6 +124,7 @@ body {
 .hero {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 100vh;
   background: var(--background-color);
@@ -447,6 +448,7 @@ span {
 
 /* Smaller tablets (768px and below) */
 @media screen and (max-width: 768px) {
+  
   .overlaping-heading {
     font-size: 3em;
   }
@@ -493,6 +495,35 @@ span {
     padding: 0.6em 1.5em;
     font-size: 0.9em;
   }
+  .section-4-heading{
+    font-size: 4em !important;
+  }
+  .section-4{
+    padding: 2em;
+    width: 100%;
+    flex-wrap: wrap;
+    /* align-items: start; */
+    /* flex-direction: column; */
+    gap: 2em;
+  }
+  
+  .section-4-left{
+    width: 100%;
+  }
+  .section-4-right{
+    width: 100%;
+
+  }
+  .section-4-heading {
+    width: 100% !important;   
+  }
+  .section-4-btn{
+    width: 80%;
+    font-size: 1em;
+  }
+  /* .section-4-right{
+    width: 100%;
+  } */
 }
 
 /* Mobile devices (480px and below) */
@@ -560,7 +591,6 @@ span {
 
 .section3 {
   background-color: #d1d3dd;
-  /* width: 98%; */
   margin: 1em auto;
   padding: 70px 0px 30px 20px;
 }
@@ -583,6 +613,39 @@ span {
   cursor: pointer;
 }
 
+.work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work-higlight {
+  font-size: 0.8em;
+  color: #59577b;
+  font-weight: 600;
+}
+
+.work-title {
+  font-size: 1.8em;
+  font-weight: 100;
+}
+
+.work-numbers {
+  font-size: 2.5em;
+  color: var(--primary-color);
+  font-weight: 400;
+}
+
+.numbers-description {
+  color: #59577b;
+}
+
 .section3-showcase {
   display: flex;
   overflow-x: auto;
@@ -602,8 +665,53 @@ span {
   height: auto;
   object-fit: cover;
   display: block;
+  transition: all ease 0.3s;
 }
 
 .section3-showcase::-webkit-scrollbar {
   display: none;
+}
+
+.work:hover {
+  cursor: pointer;
+  transition: transform 0.5s ease,
+    border-radius 0.5s ease;
+}
+
+.work:hover img {
+  border-radius: 30px;
+  transform: scale(1.02);
+}
+
+
+.section-4 {
+  padding: 1em;
+  display: flex;
+  height: 60vh;
+}
+.section-4-left{
+  width: 50%;
+}
+.section-4-heading{
+    font-weight: 200;
+  color: var(--secondary-color);
+  font-size: 4.8em;
+  letter-spacing: -3px;
+  width: 60%;
+  text-align: left;
+  text-transform: uppercase;
+}
+.section-4-right{
+  display: flex;
+  height: 60vh;
+  padding: 1em;
+  width: 50%;
+  background-color: var(--primary-color);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-4-right-para{
+  font-size: 1.5em;
+  color: var(--secondary-color);
 }
