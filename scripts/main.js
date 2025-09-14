@@ -46,3 +46,7 @@ function switchSlides(){
 document.addEventListener('DOMContentLoaded',()=>{
   loadPage()
 })
+
+
+let count = document.querySelectorAll('.scrolling-btn')
+console.log(count)
