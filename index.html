@@ -12,11 +12,15 @@
     />
     <meta name="author" content="NovixSoft" />
     <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="design solutions, branding, web design, startup, rebrand, grow, UI/UX design"
+    />
 
     <!-- Open Graph (Social Sharing) -->
     <meta
       property="og:title"
-      content="NovixSoft – Design Solutions for Growing Companies"
+      content="NovixSoft – We Build Brands Not Websites"
     />
     <meta
       property="og:description"
@@ -25,6 +29,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://novixsoft.com/" />
     <meta property="og:image" content="assets/hero-1.webp" />
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
     <!-- Locomotive Scroll CSS -->
     <link
@@ -35,9 +45,17 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    /></noscript>
+
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
   </head>
   <body data-scroll-container>
     <!-- Header / Navbar -->
@@ -49,8 +67,8 @@
     <!-- Main Content -->
     <main>
       <!-- Hero Section -->
-      <section class="hero" data-scroll data-scroll-speed="-2">
-        <div class="hero-left-col" data-scroll data-scroll-speed="-4">
+      <section class="hero">
+        <div class="hero-left-col">
           <h2 class="hero-heading">
             Design for companies ready to
             <div class="text-roller">
@@ -61,8 +79,6 @@
               </div>
             </div>
           </h2>
-          <!-- <button>Get Started</button>
-          <button>Get Started</button> -->
         </div>
 
         <!-- Hero Images -->
@@ -71,58 +87,26 @@
             src="assets/hero-1.webp"
             alt="Creative design concept"
             class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
+            loading="eager"
           />
           <img
             src="assets/hero-2.webp"
             alt="Branding showcase"
             class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
+            loading="lazy"
           />
           <img
             src="assets/hero-3.webp"
             alt="UI/UX project demo"
             class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
+            loading="lazy"
           />
           <img
             src="assets/hero-4.webp"
             alt="Website mockup"
             class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
+            loading="lazy"
           />
-          <img
-            src="assets/hero-5.webp"
-            alt="Marketing visuals"
-            class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
-          />
-          <img
-            src="assets/hero-6.webp"
-            alt="Business branding design"
-            class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
-          />
-          <!-- <img
-            src="assets/hero-7.webp"
-            alt="Creative startup design"
-            class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
-          />
-          <img
-            src="assets/hero-8.webp"
-            alt="Rebranding design"
-            class="hero-img"
-            data-scroll
-            data-scroll-speed="0.1"
-          /> -->
         </div>
       </section>
 
@@ -175,14 +159,20 @@
         <h1 class="work-heading">Selected work</h1>
 
         <div class="arrows">
-          <i class="fa-solid fa-arrow-left fa-2xl left-arrow"></i>
-          <i class="fa-solid fa-arrow-right fa-2xl right-arrow"></i>
+          <i
+            class="fa-solid fa-arrow-left fa-2xl left-arrow"
+            id="leftArrow"
+          ></i>
+          <i
+            class="fa-solid fa-arrow-right fa-2xl right-arrow"
+            id="rightArrow"
+          ></i>
         </div>
       </div>
 
-      <div class="section3-showcase">
+      <div class="section3-showcase" id="workShowcase">
         <div class="work">
-          <img src="assets/work3.webp" alt="" />
+          <img src="assets/work3.webp" alt="E-commerce platform redesign" />
           <div class="work-content">
             <p class="work-higlight">
               REBRANDING, WEBSITE REDESIGN, UI DIRECTION
@@ -207,7 +197,7 @@
           </div>
         </div>
         <div class="work">
-          <img src="assets/work1.webp" alt="" />
+          <img src="assets/work1.webp" alt="Funding round branding" />
           <div class="work-content">
             <p class="work-higlight">REBRANDING, COPYWRITNG, PITCH DECK</p>
             <h2 class="work-title">
@@ -228,7 +218,7 @@
           </div>
         </div>
         <div class="work">
-          <img src="assets/work2.webp" alt="" />
+          <img src="assets/work2.webp" alt="In-store ordering experience" />
           <div class="work-content">
             <p class="work-higlight">UI/UX DESIGN, ICON DESIGN PROTOTYPING</p>
             <h2 class="work-title">
@@ -251,7 +241,7 @@
           </div>
         </div>
         <div class="work">
-          <img src="assets/work4.webp" alt="" />
+          <img src="assets/work4.webp" alt="EU funding branding" />
           <div class="work-content">
             <p class="work-higlight">
               REBRANDING, WEBSITE REDESIGN, ICON DESIGN
@@ -274,7 +264,7 @@
           </div>
         </div>
         <div class="work">
-          <img src="assets/work5.webp" alt="" />
+          <img src="assets/work5.webp" alt="Personal brand building" />
           <div class="work-content">
             <p class="work-higlight">
               NAMING, LOGO, BRANDING, WEBSITE DESIGN, SOCIAL MEDIA
@@ -307,7 +297,7 @@
         <p class="section-4-right-para">
           Let’s discuss how I can add value to your business.
         </p>
-        <button class="btn-book-call section-4-btn">
+        <button class="btn-book-call section-4-btn" id="bookCallBtn2">
           Book a 30-min intro call
         </button>
       </div>
@@ -405,7 +395,7 @@
               </div>
             </div>
           </div>
-          <div class="elevate-button">
+          <div class="elevate-button" id="bookCallBtn3">
             <h1 class="elevate-button-text">Book a free intro call</h1>
             <div class="circle">
               <i class="fa-solid fa-arrow-right fa-2xl intro-call"></i>
@@ -449,56 +439,84 @@
           <p>Your priority brand asset ready for immediate use.</p>
         </div>
       </div>
-<div class="scrolling-wrapper">
-  <div class="scrolling-btn-container">
-    <!-- original buttons -->
-    <button class="scrolling-btn">No-code web development</button>
-    <button class="scrolling-btn">Pitch Decks</button>
-    <button class="scrolling-btn">Brand Guides</button>
-    <button class="scrolling-btn">Design Audit</button>
-    <button class="scrolling-btn">Editorial Design</button>
-    <button class="scrolling-btn">Design Systems</button>
-    <button class="scrolling-btn">Icon</button>
-    <button class="scrolling-btn">Social Media</button>
-    <button class="scrolling-btn">Print Materials</button>
-    <button class="scrolling-btn">Naming</button>
-    <button class="scrolling-btn">Copywriting</button>
-    <button class="scrolling-btn">Logo</button>
-    <button class="scrolling-btn">Key visual</button>
-    <button class="scrolling-btn">Web design</button>
-    <button class="scrolling-btn">Landing Pages</button>
-    <button class="scrolling-btn">Naming</button>
 
-    <!-- duplicate them once for seamless loop -->
-    <button class="scrolling-btn">No-code web development</button>
-    <button class="scrolling-btn">Pitch Decks</button>
-    <button class="scrolling-btn">Brand Guides</button>
-    <button class="scrolling-btn">Design Audit</button>
-    <button class="scrolling-btn">Editorial Design</button>
-    <button class="scrolling-btn">Design Systems</button>
-    <button class="scrolling-btn">Icon</button>
-    <button class="scrolling-btn">Social Media</button>
-    <button class="scrolling-btn">Print Materials</button>
-    <button class="scrolling-btn">Naming</button>
-    <button class="scrolling-btn">Copywriting</button>
-    <button class="scrolling-btn">Logo</button>
-    <button class="scrolling-btn">Key visual</button>
-    <button class="scrolling-btn">Web design</button>
-    <button class="scrolling-btn">Landing Pages</button>
-    <button class="scrolling-btn">Naming</button>
-  </div>
-</div>
+      <div class="scrolling-wrapper">
+        <div class="scrolling-btn-container">
+          <!-- original buttons -->
+          <button class="scrolling-btn">No-code web development</button>
+          <button class="scrolling-btn">Pitch Decks</button>
+          <button class="scrolling-btn">Brand Guides</button>
+          <button class="scrolling-btn">Design Audit</button>
+          <button class="scrolling-btn">Editorial Design</button>
+          <button class="scrolling-btn">Design Systems</button>
+          <button class="scrolling-btn">Icon</button>
+          <button class="scrolling-btn">Social Media</button>
+          <button class="scrolling-btn">Print Materials</button>
+          <button class="scrolling-btn">Naming</button>
+          <button class="scrolling-btn">Copywriting</button>
+          <button class="scrolling-btn">Logo</button>
+          <button class="scrolling-btn">Key visual</button>
+          <button class="scrolling-btn">Web design</button>
+          <button class="scrolling-btn">Landing Pages</button>
+          <button class="scrolling-btn">Naming</button>
+
+          <!-- duplicate them once for seamless loop -->
+          <button class="scrolling-btn">No-code web development</button>
+          <button class="scrolling-btn">Pitch Decks</button>
+          <button class="scrolling-btn">Brand Guides</button>
+          <button class="scrolling-btn">Design Audit</button>
+          <button class="scrolling-btn">Editorial Design</button>
+          <button class="scrolling-btn">Design Systems</button>
+          <button class="scrolling-btn">Icon</button>
+          <button class="scrolling-btn">Social Media</button>
+          <button class="scrolling-btn">Print Materials</button>
+          <button class="scrolling-btn">Naming</button>
+          <button class="scrolling-btn">Copywriting</button>
+          <button class="scrolling-btn">Logo</button>
+          <button class="scrolling-btn">Key visual</button>
+          <button class="scrolling-btn">Web design</button>
+          <button class="scrolling-btn">Landing Pages</button>
+          <button class="scrolling-btn">Naming</button>
+        </div>
+      </div>
     </section>
 
+    <section class="section7">
+      <div class="section7-left">
+        <div>
+          <h2 class="section7-heading">No Middlemen.</h2>
+          <h3 class="section7-sub-heading">Just Results.</h3>
+        </div>
+        <div class="section7-sub-section">
+          <p class="paragraph">
+            Agency-level designs
+            <span>for less than the cost of a full-time designer.</span>
+          </p>
+          <button class="btn-purple">Effortless communication</button>
+          <button class="btn-purple">Speed and flexibility</button>
+          <button class="btn-purple">Simplified hiring</button>
+        </div>
+      </div>
+      <div class="designer-card">
+        <span>Who is the designer?</span>
+        <img src="assets/designer.webp" alt="" />
+        <button class="find-out-btn">Click To Find Out</button>
+      </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal" id="contactModal">
+      <div class="modal-content">
+        <h2>Schedule a Call</h2>
+        <p>
+          Let's discuss how NovixSoft can help your business grow. Book a
+          30-minute introductory call with our team.
+        </p>
+        <button class="close-modal" id="closeModal">Close</button>
+      </div>
+    </div>
 
-
-
-    
     <!-- Locomotive Scroll JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"
-      defer
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="scripts/main.js" defer></script>
   </body>
 </html>
