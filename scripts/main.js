@@ -1,8 +1,8 @@
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
- multiplier:0.3 ,
-//  lerp:0.3
+ multiplier:1.3 ,
+ lerp:0.3
 });
 
 
@@ -21,8 +21,6 @@ function navbarScroll() {
     }
   });
 }
-
-
 
 function switchSlides(){
 

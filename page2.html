@@ -20,7 +20,7 @@
     <!-- Open Graph (Social Sharing) -->
     <meta
       property="og:title"
-      content="NovixSoft – Design Solutions for Growing Companies"
+      content="NovixSoft – We Build Brands Not Websites"
     />
     <meta
       property="og:description"
@@ -56,8 +56,14 @@
 
     <!-- CSS -->
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap");
+
+      * {
+        font-family: "DM Sans", sans-serif;
+      }
+
       /* ========== FONT DEFINITIONS ========== */
-      @font-face {
+      /* @font-face {
         font-family: "Hilmar";
         src: url("fonts/Hilmar-Light.otf") format("opentype");
         font-weight: 300;
@@ -79,14 +85,14 @@
         font-weight: 700;
         font-style: normal;
         font-display: swap;
-      }
+      } */
 
       /* ========== GLOBAL STYLES ========== */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Hilmar", sans-serif;
+        /* font-family: "Hilmar", sans-serif; */
       }
 
       :root {
@@ -322,7 +328,7 @@
       .overlaping-section {
         display: flex;
         position: relative;
-        z-index: 2;
+        z-index: 10;
         margin-top: 10vh;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
@@ -1031,7 +1037,7 @@
         transition: all 0.5s ease;
         opacity: 0;
         transform: translateY(20px);
-      } 
+      }
 
       .hero-img.animate {
         opacity: 1;
@@ -1250,7 +1256,7 @@
         padding-right: 10px;
         margin-bottom: 30px;
       }
-      .arrows{
+      .arrows {
         display: flex;
         flex-wrap: nowrap;
       }
@@ -1650,7 +1656,7 @@
         height: 25%;
         opacity: 0;
         transform: translateY(30px);
-        transition: all 0.8s ease 0.6s;
+        transition: all 0.3s ease 0.3s;
         cursor: pointer;
       }
 
@@ -1663,7 +1669,7 @@
         background-color: var(--background-color);
         padding: 50px 40px;
         border-radius: 50%;
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
       }
 
       .intro-call {
@@ -1681,7 +1687,8 @@
 
       .elevate-button:hover .circle {
         transform: rotate(45deg);
-        background-color: var(--primary-color);
+        color: var(--font-black);
+        background-color: var(--secondary-color);
       }
 
       .elevate-button:hover .intro-call {
@@ -1704,6 +1711,122 @@
       .section6.animate {
         opacity: 1;
         transform: translateY(0);
+      }
+      .section7 {
+        padding-right: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 16px;
+        opacity: 1;
+      }
+      .section7-left {
+        height: 70vh;
+        justify-content: space-evenly;
+        align-items: start;
+        flex-direction: column;
+        padding: 3em 1em;
+      }
+      .section7-sub-section {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 1em;
+      }
+      .section7-heading {
+        text-decoration: line-through var(--primary-color);
+        font-weight: 300;
+        color: var(--secondary-color);
+        font-size: 7em;
+      }
+      .section7-sub-heading {
+        font-weight: 300;
+        font-size: 7em;
+        text-decoration: underline; /* remove line-through */
+        color: var(--primary-color);
+      }
+      .section7 p {
+        color: var(--accent-color);
+      }
+      .section7 span {
+        color: var(--secondary-color);
+      }
+
+      .btn-purple {
+        background-color: var(--primary-color);
+        color: var(--font-black);
+        font-weight: 400;
+        border: none;
+        font-size: 2.2em;
+        padding: 0.4em 0.6em;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.5s ease 0.4s;
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      .btn-purple.animate {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .btn-purple:hover {
+        border-radius: 12px;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .designer-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .designer-card span {
+        font-size: 1.4em;
+        color: var(--secondary-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        text-align: center;
+      }
+      .find-out-btn {
+        position: absolute;
+        cursor: pointer;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        text-transform: uppercase;
+        font-weight: 800;
+        padding: 0.8em 1em;
+        font-size: 0.8em;
+        border-radius: 24px;
+        background-color: #110c42af;
+      }
+      .designer-card img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .designer-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          215deg,
+          rgba(151, 71, 255, 0) 40%,
+          rgba(151, 71, 255, 0.43) 100%
+        );
+        background-size: 150% 150%;
+        transition: all 0.4s ease;
+        pointer-events: none;
       }
 
       .process {
@@ -1773,20 +1896,20 @@
         border: none;
         letter-spacing: 1px;
         border-radius: 6px;
-        padding: 0.6em 1.5em;
+        padding: 0.8em 1.5em;
         font-size: 0.8em;
         font-weight: 900;
         text-transform: uppercase;
         color: #716dd7;
         background-color: var(--transparent-primary);
         flex: 0 0 auto;
+        cursor: pointer;
         transition: all 0.3s ease;
       }
 
       .scrolling-btn:hover {
         background-color: var(--primary-color);
         color: var(--secondary-color);
-        transform: translateY(-3px);
       }
 
       @keyframes scroll {
@@ -2644,6 +2767,28 @@
       </div>
     </section>
 
+    <section class="section7">
+      <div class="section7-left">
+        <div>
+          <h2 class="section7-heading">No Middlemen.</h2>
+          <h3 class="section7-sub-heading">Just Results.</h3>
+        </div>
+        <div class="section7-sub-section">
+          <p class="paragraph">
+            Agency-level designs
+            <span>for less than the cost of a full-time designer.</span>
+          </p>
+          <button class="btn-purple">Effortless communication</button>
+          <button class="btn-purple">Speed and flexibility</button>
+          <button class="btn-purple">Simplified hiring</button>
+        </div>
+      </div>
+      <div class="designer-card">
+        <span>Who is the designer?</span>
+        <img src="assets/designer.webp" alt="" />
+        <button class="find-out-btn">Click To Find Out</button>
+      </div>
+    </section>
     <!-- Modal -->
     <div class="modal" id="contactModal">
       <div class="modal-content">
@@ -2709,7 +2854,7 @@
 
         // Observe all elements that need animation
         const animatedElements = document.querySelectorAll(
-          ".overlaping-section, .overlaping-heading, .paragraph, .sub-paragraph, .overlaping-right, .btn-black, .section3, .work-heading, .left-arrow, .right-arrow, .work, .section-4, .section-4-left, .section-4-right, .section5, .section5-header, .section5-description, .card, .bullet, .elevate2-card, .bullet2, .elevate-button, .section6, .process"
+          ".overlaping-section, .overlaping-heading, .paragraph, .sub-paragraph, .overlaping-right, .btn-black, .btn-purple ,.section3, .work-heading, .left-arrow, .right-arrow, .work, .section-4, .section-4-left, .section-4-right, .section5, .section5-header, .section5-description, .card, .bullet, .elevate2-card, .bullet2, .elevate-button, .section6, .section7 ,.process"
         );
         animatedElements.forEach((el) => {
           observer.observe(el);
