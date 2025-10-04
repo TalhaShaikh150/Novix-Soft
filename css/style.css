@@ -1675,20 +1675,20 @@ span {
 }
 
 .section7 {
+  margin: 1em;
   padding-right: 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 16px;
   opacity: 1;
+  /* height: 100vh; */
 }
 
 .section7-left {
-  height: 70vh;
   justify-content: space-evenly;
-  align-items: start;
   flex-direction: column;
-  padding: 3em 1em;
+  /* padding: 3em 1em; */
 }
 
 .section7-sub-section {
@@ -1720,6 +1720,91 @@ span {
 .section7 span {
   color: var(--secondary-color);
 }
+
+.section8 {
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section8-heading {
+  color: var(--secondary-color);
+}
+
+.section8-para {
+  width: 80%;
+  padding-top: 1em;
+  font-size: 1.2em;
+  color: var(--accent-color);
+}
+
+.ask-me-link {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
+/* .section-8right {} */
+.faq-section {
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+.faq-question:hover {
+  color: #a8a8a8;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  /* can adjust depending on content */
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.fa-plus {
+  color: var(--primary-color);
+}
+
 
 .btn-purple {
   background-color: var(--primary-color);
@@ -2005,14 +2090,15 @@ span {
     font-size: 1.9em;
     color: var(--accent-color);
   }
+
   .work {
-  flex: 0 0 calc((100% / 5) - 10px);
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.5s ease;
-}
+    flex: 0 0 calc((100% / 5) - 10px);
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease;
+  }
 }
 
 /* Tablets and smaller desktops (1024px and below) */
