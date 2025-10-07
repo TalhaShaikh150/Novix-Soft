@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize Locomotive Scroll
+  // ================================
+  // 1. Initialize Locomotive Scroll
+  // ================================
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
@@ -8,28 +10,56 @@ document.addEventListener("DOMContentLoaded", function () {
     reloadOnContextChange: true,
   });
 
-  // Navbar scroll effect
+  // ================================
+  // 2. Navbar Scroll Effects
+  // ================================
   const navbar = document.querySelector(".navbar");
-  window.addEventListener("scroll", function () {
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    // Add background or shadow after scrolling
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
     } else {
       navbar.classList.remove("scrolled");
     }
+
+    // Hide/show navbar on scroll direction
+    if (window.scrollY > 100) {
+      if (window.scrollY > lastScrollY) {
+        navbar.classList.add("hidden"); // scrolling down
+      } else {
+        navbar.classList.remove("hidden"); // scrolling up
+      }
+    } else {
+      navbar.classList.remove("hidden");
+    }
+
+    lastScrollY = window.scrollY;
   });
 
-  // Animate elements on load
+  // ================================
+  // 3. Hero Section Initial Animation
+  // ================================
   setTimeout(() => {
-    document.querySelector(".hero-left-col").classList.add("animate");
-    document.querySelector(".hero-right-col").classList.add("animate");
-
+    const heroLeft = document.querySelector(".hero-left-col");
+    const heroRight = document.querySelector(".hero-right-col");
     const heroImages = document.querySelectorAll(".hero-img");
-    heroImages.forEach((img) => {
-      img.classList.add("animate");
+
+    if (heroLeft) heroLeft.classList.add("animate");
+    if (heroRight) heroRight.classList.add("animate");
+
+    // Stagger hero images
+    heroImages.forEach((img, index) => {
+      setTimeout(() => {
+        img.classList.add("animate");
+      }, 300 + index * 100);
     });
   }, 500);
 
-  // Intersection Observer for scroll animations
+  // ================================
+  // 4. Intersection Observer Animations
+  // ================================
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -44,15 +74,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, observerOptions);
 
-  // Observe all elements that need animation
   const animatedElements = document.querySelectorAll(
-    ".overlaping-section, .overlaping-heading, .paragraph, .sub-paragraph, .overlaping-right, .btn-black, .btn-purple ,.section3, .work-heading, .left-arrow, .right-arrow, .work, .section-4, .section-4-left, .section-4-right, .section5, .section5-header, .section5-description, .card, .bullet, .elevate2-card, .bullet2, .elevate-button, .section6, .section7 ,.process"
+    ".overlaping-section, .overlaping-heading, .paragraph, .sub-paragraph, .overlaping-right, .btn-black, .btn-purple, .section3, .work-heading, .left-arrow, .right-arrow, .work, .section-4, .section-4-left, .section-4-right, .section5, .section5-header, .section5-description, .card, .bullet, .elevate2-card, .bullet2, .elevate-button, .section6, .section7, .process"
   );
-  animatedElements.forEach((el) => {
-    observer.observe(el);
-  });
+  animatedElements.forEach((el) => observer.observe(el));
 
-  // Work section navigation
+  // ================================
+  // 5. Work Section Arrow Navigation
+  // ================================
   const leftArrow = document.getElementById("leftArrow");
   const rightArrow = document.getElementById("rightArrow");
   const workShowcase = document.getElementById("workShowcase");
@@ -66,19 +95,22 @@ document.addEventListener("DOMContentLoaded", function () {
       workShowcase.scrollBy({ left: 350, behavior: "smooth" });
     });
   }
-  const faqItems = document.querySelectorAll(".faq-item");
 
+  // ================================
+  // 6. FAQ Toggle Functionality
+  // ================================
+  const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach((item) => {
     const btn = item.querySelector(".faq-question");
     btn.addEventListener("click", () => {
-      // close others
       faqItems.forEach((i) => i !== item && i.classList.remove("active"));
-      // toggle this
       item.classList.toggle("active");
     });
   });
 
-  // Modal functionality
+  // ================================
+  // 7. Modal Functionality
+  // ================================
   const modal = document.getElementById("contactModal");
   const closeModalBtn = document.getElementById("closeModal");
   const bookCallBtn1 = document.getElementById("bookCallBtn1");
@@ -108,61 +140,15 @@ document.addEventListener("DOMContentLoaded", function () {
       closeModal();
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Add loaded class to hero elements
-  setTimeout(() => {
-    document.querySelector(".hero-left-col").classList.add("animate");
-    document.querySelector(".hero-right-col").classList.add("animate");
-
-    // Animate hero images with staggered delay
-    const heroImages = document.querySelectorAll(".hero-img");
-    heroImages.forEach((img, index) => {
-      setTimeout(() => {
-        img.classList.add("animate");
-      }, 300 + index * 100);
+  // ================================
+  // 8. "Go to Top" Button (Locomotive Scroll)
+  // ================================
+  const goToTopBtn = document.querySelector(".go-to-top");
+  if (goToTopBtn) {
+    goToTopBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      scroll.scrollTo(0); // Scroll smoothly to top using Locomotive
     });
-  }, 500);
-
-  // Navbar hide on scroll functionality
-  const navbar = document.querySelector(".navbar");
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      if (window.scrollY > lastScrollY) {
-        // Scrolling down - hide navbar
-        navbar.classList.add("hidden");
-      } else {
-        // Scrolling up - show navbar
-        navbar.classList.remove("hidden");
-      }
-    } else {
-      // At top of page - show navbar
-      navbar.classList.remove("hidden");
-    }
-
-    lastScrollY = window.scrollY;
-  });
-
-  // Animate elements on scroll
-  const animateOnScroll = () => {
-    const elements = document.querySelectorAll(
-      ".overlaping-section, .overlaping-heading, .paragraph, .sub-paragraph, .overlaping-right, .btn-black"
-    );
-
-    elements.forEach((el) => {
-      const elementTop = el.getBoundingClientRect().top;
-      const elementVisible = 150;
-
-      if (elementTop < window.innerHeight - elementVisible) {
-        el.classList.add("animate");
-      }
-    });
-  };
-
-  // Initial check and then on scroll
-  animateOnScroll();
-  window.addEventListener("scroll", animateOnScroll);
+  }
 });
